@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Physics Objects/Scripts/Goal.gd" type="Script" id=1]
+[ext_resource path="res://Physics Objects/Textures/goal.png" type="Texture" id=2]
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.12, 6.28906 )
+
+[node name="Goal" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -68.597, -38.5, -67.5283, -17.5737, -61.7047, 4.10307, -49.734, 25.7798, -34.5279, 40.9859, 32.7671, 41.3094, 49.5908, 25.7798, 61.238, 1.51479, 66.091, -16.6031, 68.2409, -38.582, 64.7281, -37.2721, 62.5322, -16.6031, 56.7085, 1.19126, 53.1497, 11.5443, 44.7378, 23.8386, 31.4729, 37.1035, -30.969, 37.7506, -46.1751, 23.5151, -56.5282, 5.39719, -63.6459, -17.8972, -64.4408, -37.4749 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 31.59 )
+shape = SubResource( 1 )
