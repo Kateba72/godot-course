@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Physics Objects/Scripts/Platform.gd" type="Script" id=1]
+[ext_resource path="res://Physics Objects/Textures/platform.png" type="Texture" id=2]
+[ext_resource path="res://Physics Objects/Textures/border.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 108, 15 )
+
+[node name="Platform" type="StaticBody2D"]
+position = Vector2( 263.401, 217.871 )
+rotation = -0.436332
+script = ExtResource( 1 )
+width = 217
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -108.0
+margin_top = -15.0
+margin_right = 109.0
+margin_bottom = 15.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+draw_center = false
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.365532, -0.27047 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}

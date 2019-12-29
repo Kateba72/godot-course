@@ -1,0 +1,63 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Goal",
+"language": "GDScript",
+"path": "res://Physics Objects/Scripts/Goal.gd"
+}, {
+"base": "Node2D",
+"class": "Pickable",
+"language": "GDScript",
+"path": "res://Physics Objects/Scripts/Pickable.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Platform",
+"language": "GDScript",
+"path": "res://Physics Objects/Scripts/Platform.gd"
+}, {
+"base": "Platform",
+"class": "RemovablePlatform",
+"language": "GDScript",
+"path": "res://Physics Objects/Scripts/RemovablePlatform.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Spikes",
+"language": "GDScript",
+"path": "res://StaticBody2D.gd"
+} ]
+_global_script_class_icons={
+"Goal": "",
+"Pickable": "",
+"Platform": "",
+"RemovablePlatform": "",
+"Spikes": ""
+}
+
+[application]
+
+config/name="WinterAka1920"
+run/main_scene="res://UI/Scenes/MainMenu.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+GameManager="*res://Autoload Scripts/GameManager.gd"
+Utilities="*res://Autoload Scripts/Utilities.gd"
+
+[physics]
+
+2d/default_gravity=250
+
+[rendering]
+
+environment/default_clear_color=Color( 0.52549, 0.65098, 0.988235, 1 )
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Physics Objects/Scripts/Pickable.gd" type="Script" id=1]
+[ext_resource path="res://Physics Objects/Textures/star.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 17.8009
+
+[node name="Star" type="Node2D"]
+position = Vector2( 351.168, 425.584 )
+script = ExtResource( 1 )
+
+[node name="Body" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Body"]
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Body"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Area2D"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}

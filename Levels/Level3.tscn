@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Physics Objects/Scenes/Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Physics Objects/Scenes/RigidRope.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Physics Objects/Textures/other_ball.png" type="Texture" id=6]
+[ext_resource path="res://Physics Objects/Scenes/Spikes.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 25.5563
+
+[node name="Level3" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 184.599, 171.053 )
+rotation = 0.354302
+width = 304
+
+[node name="Star" parent="." instance=ExtResource( 2 )]
+position = Vector2( 626.599, 321.5 )
+
+[node name="Goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 720.686, 558.606 )
+
+[node name="RigidRope" parent="." instance=ExtResource( 4 )]
+position = Vector2( 454.961, 461.098 )
+connected_body_path = NodePath("../FloatingBall")
+
+[node name="MainBall" parent="." instance=ExtResource( 5 )]
+position = Vector2( 95.5952, 83.8468 )
+rotation = 1.31772
+
+[node name="FloatingBall" type="RigidBody2D" parent="."]
+position = Vector2( 455.367, 368.017 )
+gravity_scale = -7.71
+can_sleep = false
+
+[node name="Sprite" type="Sprite" parent="FloatingBall"]
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloatingBall"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Spikes" parent="." instance=ExtResource( 7 )]
+position = Vector2( 394.157, 547.656 )
+width = 512

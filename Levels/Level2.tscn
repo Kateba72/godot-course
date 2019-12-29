@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Physics Objects/Scenes/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Physics Objects/Scenes/RemovablePlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Physics Objects/Scenes/RigidRope.tscn" type="PackedScene" id=6]
+[ext_resource path="res://StarCount.tscn" type="PackedScene" id=7]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Star3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 624.341, 388.525 )
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 687.908, 185.921 )
+
+[node name="RemovablePlatform3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 619.063, 431.597 )
+rotation = -2.73665
+
+[node name="RemovablePlatform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 498.075, 206.829 )
+rotation = -1.57104
+width = 238
+
+[node name="RemovablePlatform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 584.263, 214.529 )
+rotation = -1.57785
+width = 223
+
+[node name="MainBall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 697.37, -28.1527 )
+
+[node name="Goal" parent="." instance=ExtResource( 5 )]
+position = Vector2( 645.612, 549.511 )
+
+[node name="RigidRope" parent="." instance=ExtResource( 6 )]
+position = Vector2( 551.306, 23.6836 )
+
+[node name="Star" parent="." instance=ExtResource( 1 )]
+position = Vector2( 443.893, 103.499 )
+
+[node name="Star2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 706.363, 107.6 )
+
+[node name="Label" parent="." instance=ExtResource( 7 )]
+margin_left = 302.406
+margin_top = 52.2349
+margin_right = 379.406
+margin_bottom = 66.2349

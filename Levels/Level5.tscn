@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Physics Objects/Scenes/Booster.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Physics Objects/Scenes/RigidRope.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Physics Objects/Scenes/RemovablePlatform.tscn" type="PackedScene" id=6]
+
+[node name="Level5" type="Node2D"]
+rotation = 0.0954356
+
+[node name="Star2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 776.51, 380.99 )
+rotation = 1.29081
+
+[node name="Star" parent="." instance=ExtResource( 1 )]
+position = Vector2( 759.008, 210.275 )
+rotation = 1.31161
+
+[node name="MainBall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 603.625, 228.825 )
+rotation = 0.763055
+
+[node name="Goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 825.034, 465.439 )
+rotation = -0.0884872
+
+[node name="Booster" parent="." instance=ExtResource( 4 )]
+position = Vector2( 314.932, 269.665 )
+force = 700
+
+[node name="RigidRope" parent="." instance=ExtResource( 5 )]
+position = Vector2( 447.558, -7.66212 )
+
+[node name="RemovablePlatform" parent="." instance=ExtResource( 6 )]
+position = Vector2( 182.292, 129.715 )
+rotation = 0.576107
+
+[node name="Booster2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 202.799, 80.6441 )
+
+[node name="Star3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 139.855, 48.8964 )

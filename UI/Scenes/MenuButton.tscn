@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Textures/hamburger.png" type="Texture" id=1]
+[ext_resource path="res://UI/Scripts/MenuButton.gd" type="Script" id=2]
+
+
+
+[node name="MenuButton" type="Button"]
+margin_left = 943.178
+margin_top = 3.66612
+margin_right = 1019.18
+margin_bottom = 73.6661
+icon = ExtResource( 1 )
+script = ExtResource( 2 )

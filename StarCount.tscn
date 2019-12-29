@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Label.gd" type="Script" id=1]
+
+[node name="Label" type="Label" groups=[
+"StarCount",
+]]
+margin_left = 19.9489
+margin_top = 3.2475
+margin_right = 59.9489
+margin_bottom = 17.2475
+text = "StarCount: 0"
+script = ExtResource( 1 )
