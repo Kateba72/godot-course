@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Physics Objects/Scenes/Platform.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Physics Objects/Scenes/RigidRope.tscn" type="PackedScene" id=6]
-[ext_resource path="res://StarCount.tscn" type="PackedScene" id=7]
 
 [node name="Level2" type="Node2D"]
 
@@ -44,9 +43,3 @@ position = Vector2( 443.893, 103.499 )
 
 [node name="Star2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 706.363, 107.6 )
-
-[node name="Label" parent="." instance=ExtResource( 7 )]
-margin_left = 302.406
-margin_top = 52.2349
-margin_right = 379.406
-margin_bottom = 66.2349

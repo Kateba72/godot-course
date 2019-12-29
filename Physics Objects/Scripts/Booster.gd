@@ -1,10 +1,10 @@
 extends Area2D
 
 # Declare member variables here. Examples:
-var rotationDeg = rotation_degrees
 var isActive = true
 onready var sprite = $Sprite
 export var force = 500
+onready var animationplayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +18,7 @@ func on_body_enter(body : PhysicsBody2D):
 func activate(body : PhysicsBody2D):
 	print("Is activated!")
 	isActive = false
+	animationplayer.play("boostAnimation")
 	sprite.texture =  load("res://Physics Objects/Textures/boostused.png")
 	var x1 = force
 	var y1 = force

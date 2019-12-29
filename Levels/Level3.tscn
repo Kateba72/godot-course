@@ -28,6 +28,12 @@ position = Vector2( 720.686, 558.606 )
 position = Vector2( 454.961, 461.098 )
 connected_body_path = NodePath("../FloatingBall")
 
+[node name="Star" parent="RigidRope" instance=ExtResource( 2 )]
+position = Vector2( 195.659, 25.0836 )
+
+[node name="Star2" parent="RigidRope" instance=ExtResource( 2 )]
+position = Vector2( -288.27, -346.065 )
+
 [node name="MainBall" parent="." instance=ExtResource( 5 )]
 position = Vector2( 95.5952, 83.8468 )
 rotation = 1.31772

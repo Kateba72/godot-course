@@ -5,10 +5,10 @@
 [ext_resource path="res://ResetButton.tscn" type="PackedScene" id=3]
 
 [node name="OptionPanel" type="Panel"]
-margin_left = 859.318
-margin_top = 2.94037
-margin_right = 1023.32
-margin_bottom = 80.9404
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -164.002
+margin_bottom = 78.0
 script = ExtResource( 1 )
 
 [node name="MenuButton" parent="." instance=ExtResource( 2 )]

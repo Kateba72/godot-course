@@ -7,12 +7,14 @@ onready var animation_player : AnimationPlayer = $AnimationPlayer
 onready var audio_player : AudioStreamPlayer = $AudioStreamPlayer
 onready var particles : Particles2D = $Particles2D
 
+var picked = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	area.connect("body_entered", self, "on_body_enter")
 	area.connect("mouse_entered",self, "twinkle")  
 	if animation_player != null:
-		animation_player.play("idle")
+		animation_player.play("starAnimation")
 
 
 func on_body_enter(body : PhysicsBody2D):
@@ -26,11 +28,14 @@ func twinkle():
 	
 
 func pick_up():
-	if audio_player != null:
-		audio_player.play()
-	if particles != null:
-		particles.emitting = true
-	pickable_body.visible = false
-	area.monitoring = false
-	get_tree().call_group("StarCount","incrementCount");
-	#delete after pick up effects?
+	if !picked:
+		picked = true
+		if audio_player != null:
+			audio_player.play()
+		if particles != null:
+			particles.emitting = true
+		pickable_body.visible = false
+		particles.visible = false
+		area.monitoring = false
+		get_tree().call_group("StarCount","add_star");
+		#delete after pick up effects?

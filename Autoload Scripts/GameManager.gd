@@ -6,14 +6,18 @@ var num_levels = 0
 var main_menu_scene = preload("res://UI/Scenes/MainMenu.tscn")
 var options_bar_scene = preload("res://UI/Scenes/OptionPanel.tscn")
 var win_panel_scene = preload("res://UI/Scenes/WinPanel.tscn")
+var star_count_scene = preload("res://UI/Scenes/StarCountPanel.tscn")
 
 var options_bar = null
+var star_count = null
 var win_panel = null
 var main_menu = null
 
 var running_game : bool = false
 var current_level_index : int = -1
 var current_level : Node
+
+var current_star_count = 0 # level specific
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,6 +39,7 @@ func _ready():
 
 func unload_current_level():
 	unload_options_bar()
+	unload_star_count()
 	if win_panel != null:
 		unload_win_panel()
 	unload_scene(current_level)
@@ -45,6 +50,7 @@ func load_level(i: int):
 	var level_scene = load("res://Levels/"+levels[i])
 	current_level = load_scene(level_scene)
 	load_options_bar()
+	load_star_count()
 	current_level_index = i
 	current_level.connect("tree_entered", GameManager, "load_options_bar")	
 
@@ -69,6 +75,13 @@ func load_win_panel():
 func unload_options_bar():
 	unload_scene(options_bar)
 	options_bar = null
+	
+func unload_star_count():
+	unload_scene(star_count)
+	star_count = null
+
+func load_star_count():
+	star_count = load_scene(star_count_scene)
 
 func load_options_bar():
 	options_bar = load_scene(options_bar_scene)

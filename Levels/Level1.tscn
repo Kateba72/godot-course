@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Physics Objects/Scenes/Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Physics Objects/Scenes/RemovablePlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=5]
-[ext_resource path="res://StarCount.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.3675, 30.7674 )
@@ -49,7 +48,5 @@ position = Vector2( 459.701, 359.021 )
 [node name="Star" parent="." instance=ExtResource( 5 )]
 position = Vector2( 337.807, 300.32 )
 
-[node name="Label" parent="." instance=ExtResource( 6 )]
-
-[node name="Goal" parent="." instance=ExtResource( 7 )]
+[node name="Goal" parent="." instance=ExtResource( 6 )]
 position = Vector2( 325.775, 556.675 )
