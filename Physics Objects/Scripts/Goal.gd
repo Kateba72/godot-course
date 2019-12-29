@@ -20,4 +20,4 @@ func level_completed():
 	print("Level complete")
 	level_completed = true
 	yield (get_tree().create_timer(0.2),"timeout") #wait 0.2 seconds
-	GameManager.on_level_passed()
+	GameManager.base_level.on_level_passed()

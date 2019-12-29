@@ -14,11 +14,9 @@ func _ready():
 	if animation_player != null:
 		animation_player.play("idle")
 
-
 func on_body_enter(body : PhysicsBody2D):
 	if body.is_in_group("MainBall"):
 		pick_up()
-		
 
 func pick_up():
 	if audio_player != null:
@@ -27,5 +25,6 @@ func pick_up():
 		particles.emitting = true
 	pickable_body.visible = false
 	area.monitoring = false
-	GameManager.pick_up_star(index)
+	GameManager.base_level.pick_up_star(index)
+	
 	#delete after pick up effects?

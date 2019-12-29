@@ -12,4 +12,4 @@ func _ready():
 		menu_button.connect("pressed", GameManager, "load_menu")
 
 func pick_up_star(n: int):
-	stars[n].get_node("AnimationPlayer").play("show")
+	stars[n].collect()

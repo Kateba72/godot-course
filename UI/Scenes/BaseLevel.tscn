@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/Scripts/BaseLevel.gd" type="Script" id=1]
+[ext_resource path="res://Physics Objects/Scripts/ResetBox.gd" type="Script" id=2]
+[ext_resource path="res://UI/Scripts/OptionsBar.gd" type="Script" id=3]
+[ext_resource path="res://UI/theme.tres" type="Theme" id=4]
+[ext_resource path="res://UI/Scenes/BarStar.tscn" type="PackedScene" id=5]
+
+[node name="BaseLevel" type="Node"]
+script = ExtResource( 1 )
+
+[node name="ResetBox" type="Area2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ResetBox"]
+polygon = PoolVector2Array( 1040, -16, 1040, 616, -16, 616, -16, -16, -32, -32, -32, 632, 1056, 632, 1056, -32, -32, -32, -16, -16 )
+
+[node name="OptionsBar" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="OptionsBar"]
+anchor_right = 1.0
+margin_bottom = 50.0
+theme = ExtResource( 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsBar/Panel"]
+anchor_right = 1.0
+margin_top = 5.0
+margin_bottom = 45.0
+theme = ExtResource( 4 )
+alignment = 2
+
+[node name="Star1" parent="OptionsBar/Panel/HBoxContainer" instance=ExtResource( 5 )]
+margin_left = 720.0
+margin_right = 758.0
+
+[node name="Star2" parent="OptionsBar/Panel/HBoxContainer" instance=ExtResource( 5 )]
+margin_left = 762.0
+margin_right = 800.0
+
+[node name="Star3" parent="OptionsBar/Panel/HBoxContainer" instance=ExtResource( 5 )]
+
+[node name="VSeparator" type="Control" parent="OptionsBar/Panel/HBoxContainer"]
+margin_left = 846.0
+margin_right = 846.0
+margin_bottom = 40.0
+
+[node name="Reset Button" type="Button" parent="OptionsBar/Panel/HBoxContainer"]
+margin_left = 850.0
+margin_right = 910.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 60, 0 )
+theme = ExtResource( 4 )
+text = "Reset"
+
+[node name="Menu Button" type="Button" parent="OptionsBar/Panel/HBoxContainer"]
+margin_left = 914.0
+margin_right = 1024.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 110, 0 )
+theme = ExtResource( 4 )
+text = "Main Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OptionsBar"]

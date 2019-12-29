@@ -14,3 +14,5 @@ func generate_level_buttons():
 		button.text = "Level " + str(i+1)
 		button_container.add_child(button)
 		button.connect("pressed", GameManager, "unload_menu")
+		if i > GameManager.last_completed_level_index + 1:
+			button.disabled = true

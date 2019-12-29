@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Physics Objects/Textures/star.png" type="Texture" id=1]
+[ext_resource path="res://UI/Scripts/BarStar.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
-resource_name = "show"
+resource_name = "collect"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -24,6 +25,7 @@ margin_left = 804.0
 margin_right = 842.0
 margin_bottom = 40.0
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/show = SubResource( 1 )
+anims/collect = SubResource( 1 )
