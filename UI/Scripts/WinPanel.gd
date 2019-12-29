@@ -2,14 +2,14 @@ extends CanvasLayer
 
 onready var next_button = $"Panel/Next Button"
 onready var game_end_label = $Panel/GameEndLabel
-# onready var animation_player = $AnimationPlayer
+onready var animation_player = $AnimationPlayer
 #onready var menu_button = $"Panel/HBoxContainer/Menu Button"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	on_entered_tree()
 	connect("tree_entered", self, "on_entered_tree")
-	# animation_player.play("win_panel")
+	animation_player.play("win_panel")
 	if GameManager.running_game:
 		next_button.connect("pressed", GameManager, "load_next_level")
 

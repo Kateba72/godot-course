@@ -6,6 +6,7 @@ onready var pickable_body : Node = $Body
 onready var animation_player : AnimationPlayer = $AnimationPlayer
 onready var audio_player : AudioStreamPlayer = $AudioStreamPlayer
 onready var particles : Particles2D = $Particles2D
+export var index: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,4 +27,5 @@ func pick_up():
 		particles.emitting = true
 	pickable_body.visible = false
 	area.monitoring = false
+	GameManager.pick_up_star(index)
 	#delete after pick up effects?
