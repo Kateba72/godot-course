@@ -33,6 +33,8 @@ func set_star_count(val):
 	if starCount > 3:
 		print("Too many stars!")
 
+func playAnimation():
+	$AnimationPlayer.play("StarCollect")
 
 func add_star():
 	set_star_count(get_star_count()+1)

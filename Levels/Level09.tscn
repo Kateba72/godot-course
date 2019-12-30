@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Physics Objects/Scenes/RemovablePlatform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Physics Objects/Scenes/FloatingBall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Scenes/HintText.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Physics Objects/Scenes/MagicChain.tscn" type="PackedScene" id=7]
+
+[node name="Level9" type="Node2D"]
+
+[node name="RemovablePlatform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 91.258, 118.479 )
+rotation = 0.107778
+
+[node name="MainBall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 63.4929, 63.8869 )
+
+[node name="Goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 899.649, 558.12 )
+
+[node name="FloatingBall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 306.959, 351.718 )
+
+[node name="FloatingBall2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512.269, 352.16 )
+
+[node name="Star" parent="." instance=ExtResource( 5 )]
+position = Vector2( 508.291, 299.576 )
+
+[node name="Star2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 221.612, 88.5215 )
+
+[node name="Star3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 309.785, 232.06 )
+
+[node name="HintText" parent="." instance=ExtResource( 6 )]
+margin_left = 642.529
+margin_top = 251.784
+margin_right = 996.529
+margin_bottom = 381.784
+text = "Remember the hot air balls from level 3?
+Yeah, here they are again"
+
+[node name="MagicChain2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 515.002, 577.001 )
+connected_body_path = NodePath("../FloatingBall2")
+
+[node name="MagicChain" parent="." instance=ExtResource( 7 )]
+position = Vector2( 298.001, 570.001 )
+connected_body_path = NodePath("../FloatingBall")

@@ -5,8 +5,8 @@
 [ext_resource path="res://Physics Objects/Scenes/RemovablePlatform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Physics Objects/Scenes/RigidRope.tscn" type="PackedScene" id=6]
-[ext_resource path="res://UI/Scenes/HintText.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/Scenes/HintText.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Physics Objects/Scenes/MagicChain.tscn" type="PackedScene" id=7]
 
 [node name="Level2" type="Node2D"]
 
@@ -36,18 +36,19 @@ position = Vector2( 697.37, -28.1527 )
 [node name="Goal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 645.612, 549.511 )
 
-[node name="RigidRope" parent="." instance=ExtResource( 6 )]
-position = Vector2( 551.306, 23.6836 )
-
 [node name="Star" parent="." instance=ExtResource( 1 )]
-position = Vector2( 443.893, 103.499 )
+position = Vector2( 425.159, 119.789 )
 
 [node name="Star2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 706.363, 107.6 )
 
-[node name="HintText" parent="." instance=ExtResource( 7 )]
+[node name="HintText" parent="." instance=ExtResource( 6 )]
 margin_left = 23.9872
 margin_top = 127.187
 margin_right = 329.987
 margin_bottom = 251.187
 text = "Cut the rope by Moving the pressed mouse through it"
+
+[node name="MagicChain" parent="." instance=ExtResource( 7 )]
+position = Vector2( 511.855, 4.15223 )
+connected_body_path = NodePath("../MainBall")

@@ -3,6 +3,7 @@ extends Platform
 class_name RemovablePlatform
 
 onready var texture : TextureRect = $TextureRect
+onready var removalParticles : Particles2D = $Particles2D
 
 var is_mouse_hovering : bool 
 
@@ -11,6 +12,7 @@ func _ready():
 	texture.modulate = Color(0.8, 0.8, 0.8, 1)
 	connect("mouse_entered", self, "on_mouse_entered")
 	connect("mouse_exited", self, "on_mouse_exited")
+	
 
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,4 +29,9 @@ func on_mouse_exited():
 	is_mouse_hovering = false
 
 func remove():
+	removalParticles.emitting = true
+	texture.visible = false
+	$CollisionShape2D.disabled = true
+	yield (get_tree().create_timer(2),"timeout")
+	
 	queue_free()

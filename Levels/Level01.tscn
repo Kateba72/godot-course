@@ -45,6 +45,7 @@ width = 306
 
 [node name="RemovablePlatform" parent="." instance=ExtResource( 4 )]
 position = Vector2( 459.701, 359.021 )
+width = 270
 
 [node name="Star" parent="." instance=ExtResource( 5 )]
 position = Vector2( 337.807, 300.32 )

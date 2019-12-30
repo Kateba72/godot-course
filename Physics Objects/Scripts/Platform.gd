@@ -13,6 +13,9 @@ func _ready():
 func set_width(new_width):
 	if width != new_width:
 		width = new_width
+		var particles = $Particles2D
+		if particles != null:
+			particles.get_process_material().set_emission_box_extents(Vector3(width/2,height,0))
 		on_changed()
 		update()
 

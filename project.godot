@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Physics Objects/Scripts/Goal.gd"
 }, {
 "base": "Node2D",
+"class": "MagicChain",
+"language": "GDScript",
+"path": "res://Physics Objects/Scripts/MagicChain.gd"
+}, {
+"base": "Node2D",
 "class": "Pickable",
 "language": "GDScript",
 "path": "res://Physics Objects/Scripts/Pickable.gd"
@@ -23,6 +28,11 @@ _global_script_classes=[ {
 "class": "Platform",
 "language": "GDScript",
 "path": "res://Physics Objects/Scripts/Platform.gd"
+}, {
+"base": "Reference",
+"class": "RadiusChain",
+"language": "GDScript",
+"path": "res://Physics Objects/Scenes/RadiusChain.gd"
 }, {
 "base": "Platform",
 "class": "RemovablePlatform",
@@ -41,8 +51,10 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Goal": "",
+"MagicChain": "",
 "Pickable": "",
 "Platform": "",
+"RadiusChain": "",
 "RemovablePlatform": "",
 "RotatingPlatform": "",
 "Spikes": ""
@@ -58,6 +70,7 @@ config/icon="res://icon.png"
 
 GameManager="*res://Autoload Scripts/GameManager.gd"
 Utilities="*res://Autoload Scripts/Utilities.gd"
+RopeManager="res://Autoload Scripts/RopeManager.gd"
 
 [physics]
 

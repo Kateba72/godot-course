@@ -9,7 +9,9 @@ onready var star_count = $"Panel/StarCountPanel"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	on_entered_tree()
+	$Particles2D.emitting = true
 	connect("tree_entered", self, "on_entered_tree")
+	star_count.playAnimation()
 	star_count.set_star_count(GameManager.current_star_count)
 	animation_player.play("Animation1")
 	if GameManager.running_game:
