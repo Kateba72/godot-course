@@ -23,7 +23,7 @@ position = Vector2( 500, 469.42 )
 position = Vector2( 500, 375.797 )
 
 [node name="MagicChain" parent="." instance=ExtResource( 4 )]
-position = Vector2( 500, 15.2248 )
+position = Vector2( 500, 144.802 )
 connected_body_path = NodePath("../MainBall")
 
 [node name="MagicChain2" parent="." instance=ExtResource( 4 )]
