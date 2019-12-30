@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Physics Objects/Scripts/RemovablePlatform.gd"
 }, {
+"base": "RigidBody2D",
+"class": "RotatingPlatform",
+"language": "GDScript",
+"path": "res://Physics Objects/Scripts/RotatingPlatform.gd"
+}, {
 "base": "StaticBody2D",
 "class": "Spikes",
 "language": "GDScript",
@@ -39,6 +44,7 @@ _global_script_class_icons={
 "Pickable": "",
 "Platform": "",
 "RemovablePlatform": "",
+"RotatingPlatform": "",
 "Spikes": ""
 }
 

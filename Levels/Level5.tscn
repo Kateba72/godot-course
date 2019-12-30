@@ -28,6 +28,7 @@ rotation = -0.0884872
 
 [node name="Booster" parent="." instance=ExtResource( 4 )]
 position = Vector2( 314.932, 269.665 )
+rotation = -1.00971
 force = 700
 
 [node name="RigidRope" parent="." instance=ExtResource( 5 )]
@@ -38,8 +39,8 @@ position = Vector2( 182.292, 129.715 )
 rotation = 0.395698
 
 [node name="Booster2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 202.799, 80.6441 )
-rotation = 0.329838
+position = Vector2( 201.853, 80.7347 )
+rotation = -0.568664
 
 [node name="Star3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 139.855, 48.8964 )

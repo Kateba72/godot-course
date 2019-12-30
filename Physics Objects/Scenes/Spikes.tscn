@@ -4,7 +4,7 @@
 [ext_resource path="res://Physics Objects/Textures/spike.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 256, 15 )
+extents = Vector2( 128, 15 )
 
 [node name="Spikes" type="StaticBody2D"]
 position = Vector2( 2.55266, 1.91449 )

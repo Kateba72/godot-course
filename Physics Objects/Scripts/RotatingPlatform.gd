@@ -1,5 +1,5 @@
 tool
-extends StaticBody2D
+extends RigidBody2D
 class_name RotatingPlatform
 #controls the texture and collision shape rect size via a single pair of editable values
 

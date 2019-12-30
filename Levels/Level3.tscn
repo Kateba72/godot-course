@@ -6,7 +6,7 @@
 [ext_resource path="res://Physics Objects/Scenes/RigidRope.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Physics Objects/Textures/other_ball.png" type="Texture" id=6]
-[ext_resource path="res://Physics Objects/Scenes/Spikes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/Scenes/HintText.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 25.5563
@@ -55,6 +55,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Spikes" parent="." instance=ExtResource( 7 )]
-position = Vector2( 394.157, 547.656 )
-width = 512
+[node name="HintText" parent="." instance=ExtResource( 7 )]
+margin_left = 59.4699
+margin_top = 304.593
+margin_right = 413.47
+margin_bottom = 434.593
+text = "Some balls are powered by hot air..."
