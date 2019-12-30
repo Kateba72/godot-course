@@ -70,7 +70,7 @@ theme/custom="res://UI/theme.tres"
 
 [physics]
 
-2d/default_gravity=1000
+2d/default_gravity=250
 
 [rendering]
 

@@ -16,7 +16,7 @@ width = 300
 shape = SubResource( 1 )
 
 [node name="TextureRect" parent="." index="1"]
-modulate = Color( 0.8, 0.8, 0.8, 1 )
+modulate = Color( 0.6, 0.8, 0.6, 1 )
 margin_left = -150.0
 margin_right = 150.0
 mouse_filter = 2
