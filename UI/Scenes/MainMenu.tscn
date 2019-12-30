@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://UI/Caption.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="LevelButtons" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 99.4754
+margin_right = -100.0
+margin_bottom = -100.525
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/vseparation = 50
+custom_constants/hseparation = 50
+columns = 4
+
+[node name="Label" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 30.0
+margin_right = 924.0
+margin_bottom = 108.475
+theme = SubResource( 1 )
+text = "Titled Physics Game"
+align = 1

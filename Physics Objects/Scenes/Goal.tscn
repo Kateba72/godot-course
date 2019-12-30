@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Physics Objects/Scripts/Goal.gd" type="Script" id=1]
+[ext_resource path="res://Physics Objects/Textures/goal.png" type="Texture" id=2]
+[ext_resource path="res://Physics Objects/Textures/star_particle.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 33.5689, 10 )
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.99413, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 48.43
+flag_disable_z = true
+spread = 28.93
+gravity = Vector3( -800, 0, 0 )
+initial_velocity = 900.0
+initial_velocity_random = 0.69
+angular_velocity = 4.58939e-41
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping_random = 0.65
+angle_random = 1.0
+scale_curve = SubResource( 3 )
+
+[node name="Goal" type="Node2D"]
+position = Vector2( 302.646, 542.769 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+z_index = 10
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -68.3358, -41.1742, -64.6974, -41.3708, -63.2559, -19.0718, -57.9125, -0.0709763, -51.5504, 14.059, -41.3081, 27.4367, -31.2642, 37.4922, 31.1772, 37.0989, 42.5117, 27.0187, 51.3953, 13.9545, 57.7271, -0.267647, 63.5189, -19.9079, 64.7088, -41.7642, 68.3471, -41.7642, 67.3859, -19.9079, 62.2505, -0.0709763, 55.5759, 16.0447, 45.6471, 29.6315, 32.7506, 41.8189, -33.5259, 41.7206, -45.8022, 29.4225, -55.5219, 15.8358, -62.7308, -0.169312, -67.3319, -18.9672 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.393333, 25.6649 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 1.38458, -2.5437 )
+rotation = -1.5708
+emitting = false
+amount = 512
+lifetime = 3.0
+explosiveness = 1.0
+process_material = SubResource( 4 )
+texture = ExtResource( 3 )

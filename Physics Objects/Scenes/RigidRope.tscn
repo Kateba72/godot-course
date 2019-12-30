@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Physics Objects/Scripts/RigidRope.gd" type="Script" id=1]
+[ext_resource path="res://Physics Objects/Textures/hook_out.png" type="Texture" id=2]
+[ext_resource path="res://Physics Objects/Textures/hook_in.png" type="Texture" id=3]
+[ext_resource path="res://Physics Objects/Textures/platform.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="RigidRope" type="Node2D"]
+position = Vector2( 25.8249, 25.0017 )
+script = ExtResource( 1 )
+connected_body_path = NodePath("../MainBall2")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../Hook")
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hook" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook"]
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="Hook"]
+z_index = 2
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Line2D" type="Line2D" parent="."]
+z_index = 1
+width = 5.0
+default_color = Color( 0.635294, 0.635294, 0.635294, 1 )
+texture = ExtResource( 4 )
+texture_mode = 1024331088

@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Scripts/WinPanel.gd" type="Script" id=1]
+[ext_resource path="res://UI/Textures/win_rays.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Spin"
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[node name="WinPanel" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -350.0
+margin_top = -350.0
+margin_right = 350.0
+margin_bottom = 350.0
+rect_pivot_offset = Vector2( 350, 350 )
+texture = ExtResource( 2 )
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.5
+margin_top = -119.5
+margin_right = 176.5
+margin_bottom = 119.5
+
+[node name="GameEndLabel" type="Label" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 0.45491
+margin_bottom = -0.54509
+text = "You Win"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 100.0
+margin_right = -20.0
+margin_bottom = -20.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Next Button" type="Button" parent="Panel/HBoxContainer"]
+margin_left = 46.0
+margin_right = 146.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 100, 0 )
+text = "Next"
+
+[node name="Menu Button" type="Button" parent="Panel/HBoxContainer"]
+margin_left = 166.0
+margin_right = 266.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 100, 0 )
+text = "Main Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Spin = SubResource( 1 )
