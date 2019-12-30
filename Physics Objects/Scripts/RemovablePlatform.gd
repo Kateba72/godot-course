@@ -19,6 +19,15 @@ func _process(delta):
 	if is_mouse_hovering and Input.is_mouse_button_pressed(BUTTON_LEFT):
 		remove()
 
+func set_width(new_width):
+	if width != new_width:
+		width = new_width
+		var particles = $Particles2D
+		if particles != null:
+			particles.get_process_material().set_emission_box_extents(Vector3(width/2,height,0))
+		on_changed()
+		update()
+
 func on_mouse_entered():
 
 	texture.modulate = Color(1, 1, 1, 1)

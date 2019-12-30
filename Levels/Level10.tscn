@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Physics Objects/Scenes/SomeBall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Physics Objects/Scenes/RemovablePlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Physics Objects/Scenes/Platform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Physics Objects/Scenes/MovingPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/Scenes/HintText.tscn" type="PackedScene" id=8]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MainBall" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.556863, 0.188235, 0.188235, 1 )
+position = Vector2( 100, 80 )
+
+[node name="Goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 845.969, 531.55 )
+
+[node name="SomeBall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 200, 80 )
+can_sleep = false
+
+[node name="RemovablePlatform" parent="." instance=ExtResource( 4 )]
+position = Vector2( 100, 120 )
+rotation = 0.0
+width = 80
+
+[node name="RemovablePlatform2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 200, 120 )
+rotation = 0.0
+width = 80
+
+[node name="Platform" parent="." instance=ExtResource( 5 )]
+position = Vector2( 485, 445 )
+rotation = 0.0
+width = 80
+height = 40
+
+[node name="Platform5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 401.468, 331.54 )
+rotation = 0.0
+width = 40
+height = 40
+
+[node name="Platform3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 719.101, 507.862 )
+rotation = 0.0
+width = 50
+
+[node name="Platform2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 202.159, 223.463 )
+rotation = 0.279253
+width = 320
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 6 )]
+modulate = Color( 0.388235, 0.811765, 0.878431, 1 )
+position = Vector2( 436.733, 275.154 )
+height = 300
+
+[node name="Star" parent="." instance=ExtResource( 7 )]
+position = Vector2( 708.847, 418.579 )
+
+[node name="Star2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 509.626, 341.652 )
+
+[node name="Star3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 253.203, 189.771 )
+
+[node name="HintText" parent="." instance=ExtResource( 8 )]
+margin_left = 30.7842
+margin_top = 437.812
+margin_right = 531.784
+margin_bottom = 578.812
+text = "This level is still under construction. Our dummy ball is still here and a platform is not yet in position... Sorry"

@@ -1,22 +1,32 @@
 tool
 class_name RadiusChain
+extends Node2D
     
 var hook = preload("res://Physics Objects/Scenes/ChainLinkHook.tscn")
 var link = preload("res://Physics Objects/Scenes/ChainLink.tscn")
-onready var collisionShape : CollisionShape2D = $"Circle/CollisionShape2D"
+
+onready var circle : Area2D =$Circle
+onready var collisionShape : CollisionShape2D = $Circle/CircleShape # DOWSNT WORK, WHY NOT?
 export var radius = 128 setget set_radius
 
-var connected_body_path : NodePath
-onready var connected_body : PhysicsBody2D = get_node(connected_body_path)
+var connected_body : PhysicsBody2D
 
 var recursive: bool = false
 var wait_first: bool = true
 var unfreeze: bool = true
 
+var ropeset: bool = false # Has the rope already found a ball to connect to?
+
 func _ready():
+	circle.connect("body_entered", self, "on_body_enter")  
 	set_radius(radius)
-	
-	
+
+func on_body_enter(body : PhysicsBody2D):
+	if body.is_in_group("MainBall"):
+		ropeset = true
+		connected_body = body
+		buildRope()
+
 func buildRope():
     var total_delta_vector = to_local(connected_body.global_position)
     total_delta_vector = total_delta_vector * max(total_delta_vector.length() - 30, 10) / (total_delta_vector.length())
@@ -63,5 +73,6 @@ func buildRope():
 
 func set_radius(val):
 	radius = val
-	collisionShape.shape.radius = val
+	if collisionShape != null:
+		collisionShape.get_shape().radius = val
 	$Radius.scale = Vector2(val/128,val/128)

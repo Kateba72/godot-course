@@ -11,7 +11,7 @@ extents = Vector2( 150, 15 )
 
 [sub_resource type="ParticlesMaterial" id=2]
 emission_shape = 2
-emission_box_extents = Vector3( 111, 30, 0 )
+emission_box_extents = Vector3( 40, 30, 0 )
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 98, 0 )
