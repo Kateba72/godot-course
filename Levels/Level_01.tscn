@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Physics Objects/Scenes/Platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Physics Objects/Scenes/MovingPlatform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=7]
-[ext_resource path="res://UI/Scenes/BaseLevel.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -74,9 +73,4 @@ index = 2
 [node name="Star3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 625.235, 346.348 )
 index = 1
-
-[node name="BaseLevel" parent="." instance=ExtResource( 8 )]
-star1 = NodePath("../Star")
-star2 = NodePath("../Star2")
-star3 = NodePath("../Star3")
 [connection signal="tree_exiting" from="." to="." method="_on_Node2D_tree_exiting"]

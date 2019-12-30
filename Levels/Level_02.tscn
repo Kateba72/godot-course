@@ -23,19 +23,16 @@ can_sleep = false
 [node name="RemovablePlatform" parent="." instance=ExtResource( 4 )]
 position = Vector2( 100, 120 )
 width = 80
+height = 30
 
 [node name="RemovablePlatform2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 200, 120 )
 width = 80
+height = 30
 
 [node name="Platform" parent="." instance=ExtResource( 5 )]
 position = Vector2( 485, 445 )
-width = 40
-height = 40
-
-[node name="Platform4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 445, 445 )
-width = 40
+width = 80
 height = 40
 
 [node name="Platform5" parent="." instance=ExtResource( 5 )]
@@ -46,13 +43,16 @@ height = 40
 [node name="Platform3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 719.101, 507.862 )
 width = 50
+height = 30
 
 [node name="Platform2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 202.159, 223.463 )
 rotation = 0.279253
 width = 320
+height = 30
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 6 )]
 modulate = Color( 0.388235, 0.811765, 0.878431, 1 )
 position = Vector2( 445, 235 )
+width = 30
 height = 300

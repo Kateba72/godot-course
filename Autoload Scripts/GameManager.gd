@@ -3,6 +3,7 @@ extends Node
 var levels  = []
 var num_levels = 0
 
+var base_level_scene = preload("res://UI/Scenes/BaseLevel.tscn")
 var main_menu_scene = preload("res://UI/Scenes/MainMenu.tscn")
 var win_panel_scene = preload("res://UI/Scenes/WinPanel.tscn")
 
@@ -15,6 +16,7 @@ var last_completed_level_index: int = 0
 
 var running_game : bool = false
 var current_level_index : int = -1
+var current_level_name = ""
 var current_level : Node
 
 # Called when the node enters the scene tree for the first time.
@@ -24,23 +26,8 @@ func _ready():
 	num_levels = levels.size()
 	var scene_name = get_tree().current_scene.filename.get_file()
 	
-	var save_game = File.new()
-	if save_game.file_exists("user://first_project.save"):
-		save_game.open("user://first_project.save", File.READ)
-		var text = save_game.get_as_text()
-		progress = parse_json(save_game.get_as_text())
-		save_game.close()
-		
-	var last_completed_level = ""
-	for level in levels:
-		if not level in progress:
-			progress[level] = {'star1': false, 'star2': false, 'star3': false, 'completed': false}
-
-		if progress[level]['completed']:
-			last_completed_level = level
-
-	last_completed_level_index = levels.find(last_completed_level)
-
+	load_progress()
+	
 	if scene_name == "MainMenu.tscn":
 		main_menu = get_tree().current_scene
 		running_game = true
@@ -55,31 +42,68 @@ func _ready():
 func save_progress():
 	var save_game = File.new()
 	save_game.open("user://first_project.save", File.WRITE)
+	print("Saving game...")
+	print(to_json(progress))
 	save_game.store_string(to_json(progress))
 	save_game.close()
 
+func load_progress():
+	var save_game = File.new()
+	if save_game.file_exists("user://first_project.save"):
+		save_game.open("user://first_project.save", File.READ)
+		var text = save_game.get_as_text()
+		progress = parse_json(save_game.get_as_text())
+		save_game.close()
+		print("Game loaded")
+		print(progress)
+		
+	var last_completed_level = ""
+	for level in levels:
+		if not level in progress:
+			progress[level] = {'star1': false, 'star2': false, 'star3': false, 'completed': false}
+
+		if progress[level]['completed']:
+			last_completed_level = level
+
+	last_completed_level_index = levels.find(last_completed_level)
+
+func reset_progress():
+	print("Resetting progress")
+	var save_game = File.new()
+	save_game.open("user://first_project.save", File.WRITE)
+	print("Saving game...")
+	print(to_json({}))
+	save_game.store_string(to_json({}))
+	save_game.close()
+	load_progress()
+
 func unload_current_level():
+	unload_base_level()
 	if win_panel != null:
 		unload_win_panel()
 	if current_level != null:
 		unload_scene(current_level)
 		current_level = null
 
-func load_level(i: int):		
+func load_level(i: int):
 	var level_scene = load("res://Levels/"+levels[i])
+	current_level_index = i
+	current_level_name = levels[i]
 	current_level = load_scene(level_scene)
 	load_base_level()
-	current_level_index = i
 	current_level.connect("tree_entered", GameManager, "load_base_level")
 
 func load_next_level():
 	unload_current_level()
-	load_level(current_level_index +1)
+	load_level(current_level_index + 1)
 
 func on_level_passed(stars_picked_up):
-	progress[levels[current_level_index]]['star1'] = stars_picked_up[0]
-	progress[levels[current_level_index]]['star2'] = stars_picked_up[1]
-	progress[levels[current_level_index]]['star3'] = stars_picked_up[2]
+	progress[current_level_name]['star1'] = stars_picked_up[0]
+	progress[current_level_name]['star2'] = stars_picked_up[1]
+	progress[current_level_name]['star3'] = stars_picked_up[2]
+	progress[current_level_name]['completed'] = true
+	if current_level_index > last_completed_level_index:
+		last_completed_level_index = current_level_index
 	save_progress()
 	load_win_panel()
 
@@ -94,8 +118,12 @@ func unload_win_panel():
 func load_win_panel():
 	win_panel = load_scene(win_panel_scene)
 
+func unload_base_level():
+	unload_scene(base_level)
+	base_level = null
+
 func load_base_level():
-	base_level = current_level.get_node('BaseLevel')
+	base_level = load_scene(base_level_scene)
 
 func load_menu():
 	main_menu = load_scene(main_menu_scene)

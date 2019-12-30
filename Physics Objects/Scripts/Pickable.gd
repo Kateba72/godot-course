@@ -7,6 +7,7 @@ onready var animation_player : AnimationPlayer = $AnimationPlayer
 onready var audio_player : AudioStreamPlayer = $AudioStreamPlayer
 onready var particles : Particles2D = $Particles2D
 export var index: int
+var precollected = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +18,15 @@ func _ready():
 func on_body_enter(body : PhysicsBody2D):
 	if body.is_in_group("MainBall"):
 		pick_up()
+
+func set_precollected(value: bool):
+	precollected = value
+	print(name)
+	if value:
+		modulate = Color(.5, .5, .5)
+		$Body/Sprite_glow.visible = false
+	else:
+		modulate = Color(1, 1, 1)
 
 func pick_up():
 	if audio_player != null:

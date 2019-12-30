@@ -1,8 +1,85 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/Scripts/WinPanel.gd" type="Script" id=1]
 [ext_resource path="res://UI/theme.tres" type="Theme" id=2]
 [ext_resource path="res://UI/Textures/win_rays.png" type="Texture" id=3]
+[ext_resource path="res://Physics Objects/Textures/star.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=2]
+resource_name = "stars"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Star1:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.7 ),
+"transitions": PoolRealArray( 0.517632, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 10 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel/Star2:rect_scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7, 1.2 ),
+"transitions": PoolRealArray( 0.517632, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 10 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Panel/Star3:rect_scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.2, 1.7 ),
+"transitions": PoolRealArray( 0.517632, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 10 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Panel/Star2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Panel/Star3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Panel/Star1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "win_panel"
@@ -63,18 +140,6 @@ text = "Level completed!"
 align = 1
 valign = 1
 
-[node name="Next Button" type="Button" parent="Panel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -40.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 20 )
-theme = ExtResource( 2 )
-text = "Next"
-
 [node name="GameEndLabel" type="Label" parent="Panel"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -87,5 +152,71 @@ margin_bottom = 76.0
 text = "You finished the game!"
 align = 1
 
+[node name="Star1" type="TextureRect" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.35
+anchor_right = 0.5
+anchor_bottom = 0.35
+margin_left = -40.0
+margin_right = -40.0
+grow_horizontal = 2
+rect_pivot_offset = Vector2( 19, 19 )
+texture = ExtResource( 4 )
+
+[node name="Star2" type="TextureRect" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.35
+anchor_right = 0.5
+anchor_bottom = 0.35
+grow_horizontal = 2
+rect_pivot_offset = Vector2( 19, 19 )
+texture = ExtResource( 4 )
+
+[node name="Star3" type="TextureRect" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.35
+anchor_right = 0.5
+anchor_bottom = 0.35
+margin_left = 21.0
+margin_top = 0.418091
+margin_right = 59.0
+margin_bottom = 37.4181
+grow_horizontal = 2
+rect_pivot_offset = Vector2( 19, 19 )
+texture = ExtResource( 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -90.0
+margin_bottom = -50.0
+alignment = 1
+
+[node name="Retry Button" type="Button" parent="Panel/HBoxContainer"]
+margin_left = 123.0
+margin_right = 243.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 20 )
+theme = ExtResource( 2 )
+text = "Play Again"
+
+[node name="Next Button" type="Button" parent="Panel/HBoxContainer"]
+margin_left = 247.0
+margin_right = 367.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 20 )
+theme = ExtResource( 2 )
+text = " Next Level"
+
+[node name="MainMenu Button" type="Button" parent="Panel/HBoxContainer"]
+margin_left = 371.0
+margin_right = 491.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 20 )
+theme = ExtResource( 2 )
+text = "Main Menu"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/stars = SubResource( 2 )
 anims/win_panel = SubResource( 1 )
