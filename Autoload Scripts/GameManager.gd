@@ -57,7 +57,7 @@ func load_progress():
 	var last_completed_level = ""
 	for level in levels:
 		if not level in progress:
-			progress[level] = {'star1': false, 'star2': false, 'star3': false, 'completed': false}
+			progress[level] = {'star1': 0, 'star2': 0, 'star3': 0, 'completed': false}
 
 		if progress[level]['completed']:
 			last_completed_level = level
@@ -71,6 +71,12 @@ func reset_progress():
 	save_game.store_string(to_json({}))
 	save_game.close()
 	load_progress()
+	
+func cheat_progress():
+	for level in levels:
+		progress[level] = {}
+		progress[level]['completed'] = true
+	save_progress()
 
 func unload_current_level():
 	unload_base_level()
@@ -84,6 +90,11 @@ func load_level(i: int):
 	var level_scene = load("res://Levels/"+levels[i])
 	current_level_index = i
 	current_level_name = levels[i]
+	for i in range(1, 4):
+		if 'star'+str(i) in progress[current_level_name] and progress[current_level_name]['star'+str(i)]:
+			progress[current_level_name]['star'+str(i)] = 1
+		else:
+			progress[current_level_name]['star'+str(i)] = 0
 	current_level = load_scene(level_scene)
 	load_base_level()
 	current_level.connect("tree_entered", GameManager, "load_base_level")
@@ -93,9 +104,8 @@ func load_next_level():
 	load_level(current_level_index + 1)
 
 func on_level_passed(stars_picked_up):
-	progress[current_level_name]['star1'] = stars_picked_up[0]
-	progress[current_level_name]['star2'] = stars_picked_up[1]
-	progress[current_level_name]['star3'] = stars_picked_up[2]
+	for i in range(3):
+		progress[current_level_name]['star'+str(i+1)] = stars_picked_up[i]
 	progress[current_level_name]['completed'] = true
 	if current_level_index > last_completed_level_index:
 		last_completed_level_index = current_level_index

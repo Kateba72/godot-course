@@ -25,7 +25,7 @@ func set_precollected(value: bool):
 	precollected = value
 	print(name)
 	if value:
-		modulate = Color(.5, .5, .5)
+		modulate = Color(.8, .8, .8)
 		$Body/Glow.visible = false
 	else:
 		modulate = Color(1, 1, 1)

@@ -3,8 +3,6 @@
 [ext_resource path="res://Physics Objects/Scripts/Goal.gd" type="Script" id=1]
 [ext_resource path="res://Physics Objects/Textures/goal.png" type="Texture" id=2]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.12, 6.28906 )
 
@@ -22,5 +20,5 @@ polygon = PoolVector2Array( -68.597, -38.5, -67.5283, -17.5737, -61.7047, 4.1030
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1.19914, 5.99561 )
+position = Vector2( -0.654025, 31.0134 )
 shape = SubResource( 1 )

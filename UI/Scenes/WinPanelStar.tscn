@@ -125,7 +125,6 @@ tracks/4/keys = {
 }
 
 [node name="Star" type="TextureRect"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 19, 19 )
@@ -141,6 +140,14 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource( 3 )
 texture = ExtResource( 3 )
+
+[node name="HalfStar" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0.333333, 0.333333, 0.333333, 1 )
+margin_right = 40.0
+margin_bottom = 38.052
+rect_pivot_offset = Vector2( 19, 19 )
+texture = ExtResource( 4 )
 
 [node name="Fill" type="TextureRect" parent="."]
 visible = false

@@ -19,7 +19,7 @@ rotation = 0.354302
 width = 304
 
 [node name="Star" parent="." instance=ExtResource( 2 )]
-position = Vector2( 627.959, 321.5 )
+position = Vector2( 627.959, 333.5 )
 index = 1
 
 [node name="Goal" parent="." instance=ExtResource( 3 )]
