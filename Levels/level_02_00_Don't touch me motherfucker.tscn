@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Physics Objects/Scenes/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Physics Objects/Scenes/MagicChain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Physics Objects/Scenes/RemovablePlatform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=6]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MainBall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 50.2421, 62.7047 )
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 89.2316, 157.077 )
+rotation = 0.511381
+width = 150
+
+[node name="Platform5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 231.012, 215.561 )
+rotation = 0.261799
+width = 150
+
+[node name="Platform7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 786.17, 343.164 )
+rotation = 0.0872665
+width = 150
+
+[node name="Platform2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 366.589, 270.501 )
+rotation = 1.5708
+width = 56
+
+[node name="Platform3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 494.191, 290.882 )
+rotation = 1.5708
+width = 56
+
+[node name="Platform4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 561.537, 319.681 )
+rotation = 1.5708
+width = 56
+
+[node name="Platform6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 662.998, 330.315 )
+rotation = 1.5708
+width = 56
+
+[node name="Goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 940.356, 398.99 )
+
+[node name="MainBall2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 444.125, 260.311 )
+
+[node name="MainBall3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 619.135, 203.156 )
+
+[node name="MagicChain" parent="." instance=ExtResource( 4 )]
+position = Vector2( 439.251, 103.91 )
+connected_body_path = NodePath("../MainBall2")
+
+[node name="MagicChain2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 617.806, 99.922 )
+connected_body_path = NodePath("../MainBall3")
+
+[node name="RemoveablePlatform" parent="." instance=ExtResource( 5 )]
+position = Vector2( 608.947, 530.533 )
+rotation = 0.785398
+width = 56
+
+[node name="RemoveablePlatform2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 612.049, 445.465 )
+rotation = -0.785398
+width = 56
+
+[node name="RemoveablePlatform3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 607.618, 398.943 )
+width = 56
+
+[node name="Star" parent="." instance=ExtResource( 6 )]
+position = Vector2( 440.581, 412.281 )
+
+[node name="Star2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 696.228, 504.439 )
+
+[node name="Star3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 798.132, 300.186 )

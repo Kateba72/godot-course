@@ -7,6 +7,7 @@
 [node name="RemoveablePlatform" parent="." instance=ExtResource( 1 )]
 position = Vector2( 93.539, 283.67 )
 rotation = 1.5708
+width = 300
 
 [node name="RemoveablePlatform2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 735.109, 223.506 )
@@ -16,6 +17,7 @@ height = 30
 
 [node name="RemoveablePlatform3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 344.395, 301.366 )
+width = 300
 
 [node name="RemoveablePlatform4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 344.395, 357.283 )

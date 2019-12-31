@@ -18,6 +18,8 @@ var current_level : Node
 
 var star_count: int = 0
 var ball_count = 0
+var won = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,8 +48,7 @@ func _ready():
             
 func ball_dropped():
     ball_count -= 1
-    print(ball_count)
-    if ball_count <= 0:
+    if ball_count <= 0 and not won:
         reset_level()
 
 func unload_current_level():
@@ -60,6 +61,7 @@ func unload_current_level():
 func load_level(i: int, j: int):
     star_count = 0
     ball_count = 0
+    won = false
     var level_scene = load("res://Levels/" + levels[i][j][0])
     current_level = load_scene(level_scene)
     load_options_bar()
@@ -79,6 +81,7 @@ func load_next_level():
         load_level(current_level_index, current_level_jndex + 1)
 
 func on_level_passed():
+    won = true
     load_win_panel()
 
 func reset_level():

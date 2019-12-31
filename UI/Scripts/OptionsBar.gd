@@ -11,3 +11,8 @@ func _ready():
         menu_button.connect("pressed", GameManager, "unload_current_level")
         menu_button.connect("pressed", GameManager, "load_menu")
 
+
+func _input(event):
+    if event is InputEventKey and event.pressed:
+        if event.scancode == KEY_R:
+            GameManager.reset_level()

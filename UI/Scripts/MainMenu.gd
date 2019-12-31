@@ -13,6 +13,7 @@ var height: int = 100
 var stage_names = [
     "Tutorial:",
     "Your future husband:",
+    "What's going on?",
     "{{{ DEBUG }}}",
 ]
 

@@ -56,11 +56,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -0.393333, 25.6649 )
+position = Vector2( 0.824929, 16.0057 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 1.38458, -2.5437 )
