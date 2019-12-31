@@ -3,6 +3,7 @@ extends Platform
 class_name RemovablePlatform
 
 onready var texture : TextureRect = $TextureRect
+onready var collider = $CollisionShape2D
 
 var is_mouse_hovering : bool 
 
@@ -32,4 +33,10 @@ func on_mouse_exited():
     hover()
 
 func remove():
+    var explode = get_node("Explode")
+    collider.queue_free()
+    if explode != null:
+        explode.emitting = true
+    texture.hide()
+    yield(get_tree().create_timer(0.5), "timeout")
     queue_free()

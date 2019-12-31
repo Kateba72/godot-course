@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 0.786682, -1.18011 )
+
+[node name="Star" parent="." instance=ExtResource( 1 )]
+position = Vector2( 345.154, 283.514 )
+
+[node name="Star2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 342.62, 229.212 )
+
+[node name="Star3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 345.335, 333.835 )
+
+[node name="MainBall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 341.715, 175.633 )
+
+[node name="Goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 346.016, 393.727 )

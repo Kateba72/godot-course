@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/Scripts/WinPanel.gd" type="Script" id=1]
 [ext_resource path="res://UI/Textures/win_rays.png" type="Texture" id=2]
+[ext_resource path="res://UI/caption_theme.tres" type="Theme" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Spin"
@@ -18,6 +19,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Bounce"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 3.4822, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
 }
 
 [node name="WinPanel" type="CanvasLayer"]
@@ -41,43 +58,69 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -176.5
-margin_top = -119.5
-margin_right = 176.5
-margin_bottom = 119.5
+margin_left = -204.637
+margin_top = -149.307
+margin_right = 195.363
+margin_bottom = 150.693
+rect_pivot_offset = Vector2( 200, 150 )
 
-[node name="GameEndLabel" type="Label" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = 0.45491
-margin_bottom = -0.54509
+anchor_bottom = 1.0
+margin_left = 0.554016
+margin_right = 0.554016
+alignment = 1
+
+[node name="GameEndLabel" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 37.0
+margin_right = 400.0
+margin_bottom = 96.0
+theme = ExtResource( 3 )
 text = "You Win"
 align = 1
 valign = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 100.0
-margin_right = -20.0
-margin_bottom = -20.0
+[node name="Star Box" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 104.0
+margin_right = 400.0
+margin_bottom = 154.0
+rect_min_size = Vector2( 0, 50 )
 custom_constants/separation = 20
 alignment = 1
 
-[node name="Next Button" type="Button" parent="Panel/HBoxContainer"]
-margin_left = 46.0
-margin_right = 146.0
-margin_bottom = 119.0
-rect_min_size = Vector2( 100, 0 )
-text = "Next"
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 162.0
+margin_right = 400.0
+margin_bottom = 262.0
+rect_min_size = Vector2( 0, 100 )
+custom_constants/separation = 0
+alignment = 1
 
-[node name="Menu Button" type="Button" parent="Panel/HBoxContainer"]
-margin_left = 166.0
-margin_right = 266.0
-margin_bottom = 119.0
+[node name="Reset Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 32.0
+margin_right = 132.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 0 )
+text = "Retry"
+
+[node name="Menu Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 132.0
+margin_right = 268.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 100, 0 )
 text = "Main Menu"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Next Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 268.0
+margin_right = 368.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 0 )
+text = "Next"
+
+[node name="Spin" type="AnimationPlayer" parent="."]
+autoplay = "Spin"
 anims/Spin = SubResource( 1 )
+
+[node name="Bounce" type="AnimationPlayer" parent="."]
+autoplay = "Bounce"
+anims/Bounce = SubResource( 2 )

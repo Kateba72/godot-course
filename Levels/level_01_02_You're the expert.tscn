@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Physics Objects/Scenes/MagicChain.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Physics Objects/Scenes/RemovablePlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MainBall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 983.543, 115.655 )
+
+[node name="MagicChain" parent="." instance=ExtResource( 2 )]
+position = Vector2( 596.375, 95.2481 )
+connected_body_path = NodePath("../MainBall")
+
+[node name="Goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 32.5891, 539.522 )
+rotation = 0.784051
+
+[node name="RemoveablePlatform" parent="." instance=ExtResource( 4 )]
+position = Vector2( 977.698, 158.498 )
+rotation = 0.431866
+
+[node name="Star" parent="." instance=ExtResource( 5 )]
+position = Vector2( 192.124, 444.322 )
+
+[node name="Star2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 450.816, 460.016 )
+
+[node name="Star3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 924.362, 185.089 )

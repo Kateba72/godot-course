@@ -14,7 +14,7 @@ var unfreeze: bool = true
 func _ready():
     var total_delta_vector = to_local(connected_body.global_position)
     total_delta_vector = total_delta_vector * max(total_delta_vector.length() - 30, 10) / (total_delta_vector.length())
-    var links = int(total_delta_vector.length() / 10)
+    var links = int(total_delta_vector.length() / 20)
     var current_hook = hook.instance()
     add_child(current_hook)
     current_hook.set_position(Vector2(0, 0))

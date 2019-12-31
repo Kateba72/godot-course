@@ -1,25 +1,26 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Physics Objects/Scripts/Platform.gd" type="Script" id=1]
-[ext_resource path="res://Physics Objects/Textures/platform.png" type="Texture" id=2]
-[ext_resource path="res://Physics Objects/Textures/border.png" type="Texture" id=3]
+[ext_resource path="res://Physics Objects/Textures/platform_pix.png" type="Texture" id=2]
+[ext_resource path="res://Physics Objects/Textures/border_pix.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
-extents = Vector2( 150, 15 )
+extents = Vector2( 150, 14 )
 
 [node name="Platform" type="StaticBody2D"]
 position = Vector2( 200, 60 )
 script = ExtResource( 1 )
+height = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -150.0
-margin_top = -15.0
+margin_top = -14.0
 margin_right = 150.0
-margin_bottom = 15.0
+margin_bottom = 14.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 2
@@ -28,7 +29,7 @@ stretch_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 3 )
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10

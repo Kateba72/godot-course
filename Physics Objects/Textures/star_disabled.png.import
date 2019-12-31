@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WAka1920_godot_course.svg-5d035cd1c0497b3e3e994d51eb1baff9.stex"
+path="res://.import/star_disabled.png-e76b375b338b214157a6bd1f0569087f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://WAka1920_godot_course.svg"
-dest_files=[ "res://.import/WAka1920_godot_course.svg-5d035cd1c0497b3e3e994d51eb1baff9.stex" ]
+source_file="res://Physics Objects/Textures/star_disabled.png"
+dest_files=[ "res://.import/star_disabled.png-e76b375b338b214157a6bd1f0569087f.stex" ]
 
 [params]
 

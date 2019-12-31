@@ -1,5 +1,5 @@
 tool
-extends StaticBody2D
+extends CollisionObject2D
 class_name Platform
 #controls the texture and collision shape rect size via a single pair of editable values
 
@@ -27,3 +27,6 @@ func on_changed():
         $TextureRect.rect_size = Vector2(width,height)
         $TextureRect.rect_position = Vector2(-width/2, -height/2)
         $CollisionShape2D.shape.extents = Vector2(width/2, height/2)
+    if has_node("Explode"):
+        $Explode.get_process_material().set_emission_box_extents(Vector3(width / 2, height / 2,0))
+        $Explode.amount = 0.2 * width * height

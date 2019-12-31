@@ -15,7 +15,7 @@ position = Vector2( 264.161, 275.396 )
 rotation = 0.193314
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 620.972, 380.148 )
+position = Vector2( 621.155, 380.331 )
 rotation = -0.429528
 
 [node name="MainBall" parent="." instance=ExtResource( 3 )]

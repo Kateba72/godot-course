@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Physics Objects/Scripts/Pickable.gd" type="Script" id=1]
-[ext_resource path="res://Physics Objects/Textures/star_particle.png" type="Texture" id=2]
+[ext_resource path="res://Physics Objects/Textures/star_particle_pix.png" type="Texture" id=2]
 [ext_resource path="res://Physics Objects/Textures/star_glow.png" type="Texture" id=3]
-[ext_resource path="res://Physics Objects/Textures/star.png" type="Texture" id=4]
+[ext_resource path="res://Physics Objects/Textures/star_pix.png" type="Texture" id=4]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0237236, 0.0, 0, 0 ]
@@ -89,4 +89,5 @@ position = Vector2( -0.194824, -2.45774 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 anims/idle = SubResource( 5 )

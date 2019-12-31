@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Physics Objects/Scripts/Goal.gd" type="Script" id=1]
-[ext_resource path="res://Physics Objects/Textures/goal.png" type="Texture" id=2]
-[ext_resource path="res://Physics Objects/Textures/star_particle.png" type="Texture" id=3]
+[ext_resource path="res://Physics Objects/Textures/goal_pix.png" type="Texture" id=2]
+[ext_resource path="res://Physics Objects/Textures/star_particle_pix.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.5689, 10 )
@@ -18,7 +18,7 @@ emission_shape = 1
 emission_sphere_radius = 48.43
 flag_disable_z = true
 spread = 28.93
-gravity = Vector3( -800, 0, 0 )
+gravity = Vector3( 0, 800, 0 )
 initial_velocity = 900.0
 initial_velocity_random = 0.69
 angular_velocity = 4.58939e-41
@@ -45,7 +45,7 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -68.3358, -41.1742, -64.6974, -41.3708, -63.2559, -19.0718, -57.9125, -0.0709763, -51.5504, 14.059, -41.3081, 27.4367, -31.2642, 37.4922, 31.1772, 37.0989, 42.5117, 27.0187, 51.3953, 13.9545, 57.7271, -0.267647, 63.5189, -19.9079, 64.7088, -41.7642, 68.3471, -41.7642, 67.3859, -19.9079, 62.2505, -0.0709763, 55.5759, 16.0447, 45.6471, 29.6315, 32.7506, 41.8189, -33.5259, 41.7206, -45.8022, 29.4225, -55.5219, 15.8358, -62.7308, -0.169312, -67.3319, -18.9672 )
+polygon = PoolVector2Array( -63.8522, -39.5589, -60.0234, -39.5589, -58.109, -13.5401, -53.671, 4.21179, -48.328, 15.6982, -40.6181, 24.0522, -31.4811, 35.6257, 31.4338, 35.7128, 40.3968, 23.7911, 48.1763, 15.4372, 53.7978, 4.47284, 57.9747, -14.3233, 60.0109, -39.559, 63.8398, -39.994, 62.9696, -11.8868, 58.0617, 4.12476, 51.3612, 19.7012, 44.3997, 27.4459, 32.13, 40.1508, -32.1772, 39.9767, -44.1859, 27.881, -52.0176, 19.5272, -58.6311, 4.03778, -62.634, -11.8868 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -69,5 +69,6 @@ emitting = false
 amount = 512
 lifetime = 3.0
 explosiveness = 1.0
+local_coords = false
 process_material = SubResource( 4 )
 texture = ExtResource( 3 )

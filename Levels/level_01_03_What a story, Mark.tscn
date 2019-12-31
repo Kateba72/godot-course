@@ -11,13 +11,13 @@
 position = Vector2( 0.786682, -1.18011 )
 
 [node name="Platform" parent="." instance=ExtResource( 1 )]
-position = Vector2( 480.717, 280.229 )
+position = Vector2( 477.065, 264.766 )
 rotation = -0.570723
 
 [node name="Platform2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 399.503, 510.877 )
-rotation = 0.124299
-height = 8
+position = Vector2( 372.007, 503.383 )
+rotation = 0.327818
+height = 20
 
 [node name="Platform3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 208.218, 371.012 )
@@ -29,9 +29,9 @@ rotation = 0.190241
 height = 20
 
 [node name="RemoveablePlatform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 312.138, 163.254 )
+position = Vector2( 311.8, 162.916 )
 width = 400
-height = 50
+height = 40
 
 [node name="MainBall" parent="." instance=ExtResource( 3 )]
 position = Vector2( 154.185, 214.557 )
@@ -40,7 +40,7 @@ position = Vector2( 154.185, 214.557 )
 position = Vector2( 146.342, 110.17 )
 
 [node name="MainBall3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 874.1, 81.4907 )
+position = Vector2( 875.292, 91.2653 )
 
 [node name="MainBall4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 48.2864, 45.0066 )
@@ -50,20 +50,20 @@ position = Vector2( 345.564, 111.315 )
 rotation = -0.570723
 
 [node name="Star" parent="." instance=ExtResource( 4 )]
-position = Vector2( 579.267, 170.061 )
+position = Vector2( 581.2, 147.971 )
 
 [node name="Star2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 452.404, 427.189 )
+position = Vector2( 451.299, 423.599 )
 
 [node name="Star3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 517.519, 437.833 )
+position = Vector2( 509.235, 453.02 )
 
 [node name="Goal" parent="." instance=ExtResource( 5 )]
-position = Vector2( 617.039, 535.243 )
+position = Vector2( 594.397, 536.071 )
 z_index = 3
 
 [node name="MagicChain" parent="." instance=ExtResource( 6 )]
-position = Vector2( 974.132, 47.1992 )
+position = Vector2( 1017.52, 63.6492 )
 connected_body_path = NodePath("../MainBall3")
 
 [node name="MagicChain2" parent="." instance=ExtResource( 6 )]

@@ -10,10 +10,14 @@ var options_bar = null
 var win_panel = null
 var main_menu = null
 
+
 var running_game : bool = false
 var current_level_index : int = -1
 var current_level_jndex : int = -1
 var current_level : Node
+
+var star_count: int = 0
+var ball_count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,6 +43,12 @@ func _ready():
             current_level = get_tree().current_scene
             call_deferred("load_options_bar")
             running_game = true
+            
+func ball_dropped():
+    ball_count -= 1
+    print(ball_count)
+    if ball_count <= 0:
+        reset_level()
 
 func unload_current_level():
     unload_options_bar()
@@ -48,13 +58,15 @@ func unload_current_level():
     current_level = null
 
 func load_level(i: int, j: int):
+    star_count = 0
+    ball_count = 0
     var level_scene = load("res://Levels/" + levels[i][j][0])
     current_level = load_scene(level_scene)
     load_options_bar()
     options_bar.title_label.text = levels[i][j][1]
     current_level_index = i
     current_level_jndex = j
-    current_level.connect("tree_entered", GameManager, "load_options_bar")	
+    current_level.connect("tree_entered", GameManager, "load_options_bar")
 
 func has_next_level() -> bool:
     return (current_level_index + 1 < levels.size()) or (current_level_jndex + 1 < levels[current_level_index].size())

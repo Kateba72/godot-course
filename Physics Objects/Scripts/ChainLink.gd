@@ -12,6 +12,7 @@ var rope_on : bool
 var mouse_pos : Vector2
 var prev_mouse_pos : Vector2
 var was_mouse_pressed : bool = false
+var dead: bool = false
 
 func _ready():
     if joint != null:
@@ -29,7 +30,11 @@ func manual_configure():
 
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    if rope_on: # and connected_body != null:
+    if (rope_on
+            and connected_body != null
+            and weakref(connected_body).get_ref()
+            and not (connected_body.has_method("dead_get") and connected_body.dead)
+            ):
         #update line renderer with point positions
         line.points = [Vector2(0,0), to_local(connected_body.global_position)]
         
@@ -46,5 +51,13 @@ func cut_rope():
     line.points = []
     joint.node_b = NodePath()
     yield(get_tree().create_timer(0.01), "timeout")
-    if connected_body != null and connected_body.has_method("cut_rope"):
+    if (connected_body != null 
+            and connected_body != null
+            and weakref(connected_body).get_ref()
+            and not (connected_body.has_method("dead_get") and connected_body.dead)
+            and connected_body.has_method("cut_rope") 
+            ):
         connected_body.cut_rope()
+        connected_body.dead = true
+        yield(get_tree().create_timer(0.1), "timeout")
+        connected_body.queue_free()

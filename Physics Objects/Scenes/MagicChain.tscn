@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Physics Objects/Scripts/MagicChain.gd" type="Script" id=1]
-[ext_resource path="res://Physics Objects/Textures/hook_out.png" type="Texture" id=2]
+[ext_resource path="res://Physics Objects/Textures/hook_out_pix.png" type="Texture" id=2]
 
 [node name="MagicChain" type="Node2D"]
 position = Vector2( 799.552, 144.802 )

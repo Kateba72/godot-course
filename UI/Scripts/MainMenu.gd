@@ -12,7 +12,8 @@ var height: int = 100
 
 var stage_names = [
     "Tutorial:",
-    "First Game:",
+    "Your future husband:",
+    "{{{ DEBUG }}}",
 ]
 
 func generate_level_buttons():

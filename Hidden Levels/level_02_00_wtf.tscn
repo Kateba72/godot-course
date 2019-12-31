@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Physics Objects/Scenes/RemovablePlatform.tscn" type="PackedScene" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RemoveablePlatform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 93.539, 283.67 )
+rotation = 1.5708
+
+[node name="RemoveablePlatform2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 735.109, 223.506 )
+rotation = 0.785398
+width = 30
+height = 30
+
+[node name="RemoveablePlatform3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 344.395, 301.366 )
+
+[node name="RemoveablePlatform4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 344.395, 357.283 )
+width = 200
+
+[node name="RemoveablePlatform5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 488.789, 457.793 )
+width = 800
