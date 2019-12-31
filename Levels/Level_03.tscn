@@ -84,12 +84,12 @@ rotation = -0.0872665
 width = 120
 
 [node name="Platform" parent="Platform9" instance=ExtResource( 4 )]
-position = Vector2( 45.8519, 25.2341 )
+position = Vector2( 44.426, 25.1093 )
 rotation = 1.5708
 width = 80
 
 [node name="Platform2" parent="Platform9" instance=ExtResource( 4 )]
-position = Vector2( 118.179, 24.8884 )
+position = Vector2( 127.145, 25.6728 )
 rotation = 1.5708
 width = 80
 
