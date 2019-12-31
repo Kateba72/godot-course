@@ -82,9 +82,17 @@ Utilities="*res://Autoload Scripts/Utilities.gd"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
+[editor]
+
+convert_text_resources_to_binary_on_export=true
+
 [gui]
 
 theme/custom="res://UI/theme.tres"
+
+[locale]
+
+locale_filter=[ 0, [ "byn_ER" ] ]
 
 [physics]
 

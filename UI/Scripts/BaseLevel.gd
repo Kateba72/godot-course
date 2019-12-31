@@ -21,5 +21,4 @@ func pick_up_star(index: int):
 	
 func on_level_passed():
 	$"OptionsBar/Panel".visible = false
-	print(stars_picked_up)
 	GameManager.on_level_passed(stars_picked_up)

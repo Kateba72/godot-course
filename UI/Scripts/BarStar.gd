@@ -10,6 +10,8 @@ func set_collected(value: int):
 	collected = value
 	if value == 1:
 		$HalfStar.visible = true
+	if value == 2:
+		$FullStar.visible = true
 
 
 func collect():

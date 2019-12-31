@@ -110,7 +110,6 @@ position = Vector2( 233.507, 475.885 )
 [node name="Platform5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 70.262, 342.711 )
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 width = 250
 
 [node name="RemovablePlatform4" parent="." instance=ExtResource( 1 )]

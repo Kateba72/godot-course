@@ -25,7 +25,8 @@ func _ready():
 	levels.sort()
 	num_levels = levels.size()
 	var scene_name = get_tree().current_scene.filename.get_file()
-
+	
+#	cheat_progress()
 	load_progress()
 
 	if scene_name == "MainMenu.tscn":
@@ -38,6 +39,8 @@ func _ready():
 			current_level = get_tree().current_scene
 			call_deferred("load_base_level")
 			running_game = true
+	
+	main_menu.generate_level_buttons()
 
 func save_progress():
 	var save_game = File.new()
@@ -74,8 +77,7 @@ func reset_progress():
 	
 func cheat_progress():
 	for level in levels:
-		progress[level] = {}
-		progress[level]['completed'] = true
+		progress[level] = {'completed': true, 'star1': 0, 'star2': 0, 'star3': 0}
 	save_progress()
 
 func unload_current_level():
@@ -132,6 +134,7 @@ func load_base_level():
 
 func load_menu():
 	main_menu = load_scene(main_menu_scene)
+	main_menu.generate_level_buttons()
 
 func unload_menu():
 	unload_scene(main_menu)

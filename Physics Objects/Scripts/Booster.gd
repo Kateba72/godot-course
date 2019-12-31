@@ -25,7 +25,3 @@ func activate(body : PhysicsBody2D):
 	var x2 = cos(rotation_degrees*degToRad)*x1 - sin(rotation_degrees*degToRad)*y1
 	var y2 = sin(rotation_degrees*degToRad)*x1 + cos(rotation_degrees*degToRad)*y1
 	body.apply_impulse(Vector2(0,0),Vector2(x2,y2))
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

@@ -5,7 +5,7 @@
 [ext_resource path="res://UI/Textures/win_rays.png" type="Texture" id=3]
 [ext_resource path="res://UI/Scenes/WinPanelStar.tscn" type="PackedScene" id=4]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "win_panel"
 length = 12.0
 loop = true
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 12.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("Panel/Star1")
@@ -189,8 +189,8 @@ text = "Main Menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "win_panel"
-anims/win_panel = SubResource( 2 )
+anims/win_panel = SubResource( 1 )
 
 [node name="AnimationPlayerStars" type="AnimationPlayer" parent="."]
 autoplay = "stars"
-anims/stars = SubResource( 3 )
+anims/stars = SubResource( 2 )

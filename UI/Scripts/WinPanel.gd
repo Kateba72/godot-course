@@ -10,9 +10,6 @@ onready var menu_button = $"Panel/HBoxContainer/MainMenu Button"
 func _ready():
 	on_entered_tree()
 	connect("tree_entered", self, "on_entered_tree")
-#	animation_player.play("win_panel")
-#	animation_player.play("stars")
-#	print("Playing animations")
 	if GameManager.running_game:
 		next_button.connect("pressed", GameManager, "load_next_level")
 		retry_button.connect("pressed", GameManager, "reset_level")

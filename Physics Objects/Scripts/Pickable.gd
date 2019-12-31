@@ -23,7 +23,6 @@ func on_body_enter(body : PhysicsBody2D):
 
 func set_precollected(value: bool):
 	precollected = value
-	print(name)
 	if value:
 		modulate = Color(.8, .8, .8)
 		$Body/Glow.visible = false
