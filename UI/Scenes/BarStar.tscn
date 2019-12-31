@@ -1,26 +1,38 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Physics Objects/Textures/star.png" type="Texture" id=1]
+[ext_resource path="res://UI/Textures/star_pixel_empty.png" type="Texture" id=1]
 [ext_resource path="res://UI/Scripts/BarStar.gd" type="Script" id=2]
+[ext_resource path="res://UI/Textures/star_pixel.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "collect"
 length = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 2
+tracks/0/path = NodePath("FullStar:visible")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FullStar:rect_scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.18 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0.333333, 0.333333, 0.333333, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
 }
 
 [node name="Star1" type="TextureRect"]
-modulate = Color( 0.333333, 0.333333, 0.333333, 1 )
 margin_left = 804.0
 margin_right = 842.0
 margin_bottom = 40.0
@@ -29,3 +41,10 @@ script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/collect = SubResource( 1 )
+
+[node name="FullStar" type="TextureRect" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 19, 19 )
+texture = ExtResource( 3 )

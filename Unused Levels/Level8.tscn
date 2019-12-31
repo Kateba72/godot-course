@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://UI/Scenes/HintText.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Physics Objects/Scenes/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Physics Objects/Scenes/RotatingPlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Physics Objects/Scenes/Booster.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Physics Objects/Scenes/RemovablePlatform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=8]
+
+[node name="Level8" type="Node2D"]
+
+[node name="HintText" parent="." instance=ExtResource( 1 )]
+margin_left = 553.477
+margin_top = 61.0
+margin_right = 830.477
+margin_bottom = 191.0
+text = "Rotating platforms make me dizzy..."
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1000.59, 101.79 )
+rotation = -1.77518
+width = 370
+
+[node name="RotatingPlatform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 399.635, 459.393 )
+rotation = -1.33885
+angular_velocity = 3.0
+width = 357
+
+[node name="Booster" parent="." instance=ExtResource( 4 )]
+position = Vector2( 507.055, 264.14 )
+rotation = 2.94154
+
+[node name="RemovablePlatform" parent="." instance=ExtResource( 5 )]
+position = Vector2( 99.3989, 133.245 )
+rotation = 0.0
+
+[node name="RotatingPlatform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 123.516, 307.224 )
+rotation = 0.00319743
+width = 225
+
+[node name="MainBall" parent="." instance=ExtResource( 6 )]
+position = Vector2( 68.9325, 34.2061 )
+collision_mask = 3
+
+[node name="Goal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 948.81, 551.588 )
+
+[node name="Booster2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 89.9629, 509.407 )
+rotation = -1.27881
+force = 700
+
+[node name="Star" parent="." instance=ExtResource( 8 )]
+position = Vector2( 967.155, 153.683 )
+
+[node name="Star2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 369.396, 179.917 )
+
+[node name="Booster3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1.22888, 6.84518 )
+rotation = -0.621765
+force = 2000
+
+[node name="Star3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 142.368, 466.279 )

@@ -8,3 +8,7 @@ func _ready():
 
 func level_completed():
 	$AnimationPlayer.play("Disappear")
+
+func go_to_sleep():
+	can_sleep=true
+	set_sleeping(true)

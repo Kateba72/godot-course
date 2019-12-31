@@ -10,8 +10,9 @@ onready var menu_button = $"Panel/HBoxContainer/MainMenu Button"
 func _ready():
 	on_entered_tree()
 	connect("tree_entered", self, "on_entered_tree")
-	animation_player.play("win_panel")
-	animation_player.play("stars")
+#	animation_player.play("win_panel")
+#	animation_player.play("stars")
+#	print("Playing animations")
 	if GameManager.running_game:
 		next_button.connect("pressed", GameManager, "load_next_level")
 		retry_button.connect("pressed", GameManager, "reset_level")
@@ -27,8 +28,3 @@ func on_entered_tree():
 		next_button.visible = true
 		next_button.disabled = false
 		game_end_label.visible = false
-	for i in range(1, 4):
-		if GameManager.progress[GameManager.current_level_name]['star' + str(i)]:
-			get_node("Panel/Star"+str(i)).modulate = Color(1, 1, 1)
-		else:
-			get_node("Panel/Star"+str(i)).modulate = Color(.3, .3, .3)

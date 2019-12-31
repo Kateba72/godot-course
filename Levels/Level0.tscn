@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Physics Objects/Scenes/Star.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Physics Objects/Scenes/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Physics Objects/Scenes/MainBall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Physics Objects/Scenes/Goal.tscn" type="PackedScene" id=4]
+
+[node name="Level0" type="Node2D"]
+
+[node name="Star" parent="." instance=ExtResource( 1 )]
+position = Vector2( 251.425, 134.206 )
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 375.141, 244.428 )
+rotation = 0.386895
+width = 434
+
+[node name="MainBall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 277.865, 51.2222 )
+rotation = 0.0903836
+
+[node name="Star2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 406.413, 194.748 )
+index = 1
+
+[node name="Star3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 709.125, 359.424 )
+index = 2
+
+[node name="Goal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 745.45, 519.255 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 614.36
+margin_top = 116.198
+margin_right = 968.36
+margin_bottom = 246.198
+text = "Maneuver the ball into the goal. Collect as many stars as possible!"
+autowrap = true
+uppercase = true

@@ -1,7 +1,6 @@
 extends Node2D
 
 export var connected_body_path : NodePath
-export var joints_number = 10
 onready var connected_body : PhysicsBody2D = get_node(connected_body_path)
 
 onready var joint = $PinJoint2D
@@ -11,31 +10,35 @@ var mouse_pos : Vector2
 var prev_mouse_pos : Vector2
 var was_mouse_pressed : bool = false
 
-var RopePart = load("res://Physics Objects/Scenes/RopePart.tscn")
-var Star = load("res://Physics Objects/Scenes/Star.tscn")
-
+var rope_on : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pass
 	if connected_body != null:
-		var last_joint = joint
-		for i in range(joints_number + 1):
-			var rope_part = Node2D.new()
-			var pinjoint = PinJoint2D.new()
-			var chainlink = RigidBody2D.new()
-			var collision_shape = CollisionShape2D.new()
-			var sprite = Sprite.new()
-			var line = Line2D.new()
-			rope_part.add_child(pinjoint)
-			rope_part.add_child(chainlink)
-			rope_part.add_child(line)
-			chainlink.add_child(collision_shape)
-			chainlink.add_child(sprite)
-			sprite.texture = load("res://Physics Objects/Textures/hook_in.png")
-			pinjoint.node_a = chainlink.get_path()
-			pinjoint.node_b = last_joint.get_path()
-			collision_shape.set_shape(CircleShape2D.new())
-			last_joint = pinjoint
-			collision_shape
-			
-		last_joint.node_b = NodePath("../" + connected_body_path)
+		rope_on = true
+		joint.node_b = NodePath("../" + connected_body_path)
+
+#Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if rope_on:
+		#update line renderer with point positions
+		var points : Array = []
+		points.append(Vector2(0,0))
+		#print(connected_body)
+		points.append(to_local(connected_body.global_position))
+		line.points = points
+
+		#check for mouse input
+		mouse_pos = get_viewport().get_mouse_position()
+		if Input.is_mouse_button_pressed(BUTTON_LEFT) and was_mouse_pressed:
+			if Utilities.do_intersect(prev_mouse_pos,mouse_pos, global_position, connected_body.global_position):
+				cut_rope()
+		prev_mouse_pos = mouse_pos
+		was_mouse_pressed = Input.is_mouse_button_pressed(BUTTON_LEFT)
+
+
+func cut_rope():
+	rope_on = false
+	line.points = []
+	joint.node_b = NodePath()

@@ -25,13 +25,13 @@ func _ready():
 	levels.sort()
 	num_levels = levels.size()
 	var scene_name = get_tree().current_scene.filename.get_file()
-	
+
 	load_progress()
-	
+
 	if scene_name == "MainMenu.tscn":
 		main_menu = get_tree().current_scene
 		running_game = true
-	else: 
+	else:
 		main_menu = main_menu_scene.instance()
 		current_level_index = levels.find(scene_name)
 		if current_level_index >= 0:
@@ -43,7 +43,6 @@ func save_progress():
 	var save_game = File.new()
 	save_game.open("user://first_project.save", File.WRITE)
 	print("Saving game...")
-	print(to_json(progress))
 	save_game.store_string(to_json(progress))
 	save_game.close()
 
@@ -51,12 +50,10 @@ func load_progress():
 	var save_game = File.new()
 	if save_game.file_exists("user://first_project.save"):
 		save_game.open("user://first_project.save", File.READ)
-		var text = save_game.get_as_text()
 		progress = parse_json(save_game.get_as_text())
 		save_game.close()
 		print("Game loaded")
-		print(progress)
-		
+
 	var last_completed_level = ""
 	for level in levels:
 		if not level in progress:
@@ -71,8 +68,6 @@ func reset_progress():
 	print("Resetting progress")
 	var save_game = File.new()
 	save_game.open("user://first_project.save", File.WRITE)
-	print("Saving game...")
-	print(to_json({}))
 	save_game.store_string(to_json({}))
 	save_game.close()
 	load_progress()
@@ -114,7 +109,7 @@ func reset_level():
 func unload_win_panel():
 	unload_scene(win_panel)
 	win_panel = null
-	
+
 func load_win_panel():
 	win_panel = load_scene(win_panel_scene)
 
